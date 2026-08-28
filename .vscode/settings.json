@@ -5,4 +5,5 @@
     // },
     "code-runner.saveFileBeforeRun": true,
     "terminal.integrated.fontSize": 14,
+    "editor.parameterHints.enabled": false
 }
