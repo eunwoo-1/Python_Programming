@@ -25,4 +25,28 @@ for i in range(5, 0, -1):
 print()
 
 # 1 ~ 10까지 합
-tot = 0
+sum = 0
+for i in range(1, 11):
+    tot += i
+else:
+    print(f"sum = {tot}")
+
+print(sum(range(1, 11)))
+
+s = "hi한글한국"
+
+for c in s:
+    print(c, end = " ")
+
+print(len(s))
+
+# 구구단 출력
+# 2 * 1 = 2   2 * 2 = 4 ... 2 * 9 = 18
+# 
+
+for j in range(2, 10):
+    for i in range(1, 10):
+        print(f"{j} * {i} = {j*i:<5d}", end = "")
+    print()  # 줄바꿈
+else:
+    print("End")
