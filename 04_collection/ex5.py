@@ -14,7 +14,7 @@ a = {}
 b = dict()
 print(type(a), type(b))
 
-d = {"id": 1304, "name": "강지준", "age": 17}
+d = {"id": 1309, "name": "손태영", "age": 17}
 print(d)
 
 # 키로 값 가져오기
@@ -23,10 +23,10 @@ print(d["name"])
 
 # 에러가 안나게 하려면?
 if "phone" in d:
-    print(d[phone])
+    print(d["phone"])
 
 print(d.get("phone"))
-print(d.get("phone", "전화 없음"))
+print(d.get("phone", "전화없음"))
 
 # ===========================================================
 # 1. 딕셔너리는 mutable하다. (변경 가능)
@@ -53,7 +53,7 @@ for key in d:
     print(key, d[key])
 
 for i, data in enumerate(d):
-    print(i, key)
+    print(i, data)
 
 for value in d.values():
     print(value)
@@ -61,12 +61,12 @@ for value in d.values():
 for key, value in d.items():
     print(key, value)
 
-
 # ===========================================================
 # 3. 딕셔너리는 sequence 객체가 아니다. (인덱싱, 슬라이싱 불가)
 # ===========================================================
 
-d[0] ="python"
+d[0] = "python"
+print(d)
 
 
 # ===========================================================
@@ -78,10 +78,10 @@ d = {"kor": 90, "mat": 85, "eng": 80}
 d["kor"] = 100
 print(d)
 
-d["sci"] = 80
+d['sci'] = 80
 print(d)
 
-d[[1, 2]] = 100
+d[(1, 2)] = 100
 print(d)
 
 # 키로 가능한 것 : immutable 타입 (숫자형, 불리언, 문자열, 튜플) -> hashable type
@@ -90,7 +90,8 @@ print(d)
 
 print(hash(12345))
 print(hash("python"))
-print(hash((1, 2)))
+print(hash((1,2)))
+# print(hash([1, 2]))
 
 # 딕셔너리가 저장되는 방식
 # 1. 딕셔너리 데이터를 저장하기 위한 해시 테이블을 생성함
@@ -106,25 +107,46 @@ print(hash((1, 2)))
 
 
 
+
 # ===========================================================
 #  파이썬 내장 함수
 # ===========================================================
 
 d = {"kor": 90, "mat": 85, "eng": 80}
 
+print(len(d))
+# print(sum(d))
+print(sum(d.values()))
+print(min(d), min(d.values()))
+print(max(d), max(d.values()))
 
+print(sorted(d))
+print(dict(sorted(d.items())))      # 키를 기준으로 정렬
+
+# value 기준으로 정렬하기
+def key(x):
+    return x[1]
+
+print(dict(sorted(d.items(), key=key)))
+print(dict(sorted(d.items(), key=key, reverse=True)))
 
 # 정렬 기준 설정하기
 # lambda: 이름 없는(익명) 한 줄짜리 함수를 만듦
 # lambda 매개변수1, 매개변수2, ... : 표현식
 
+print(dict(sorted(d.items(), key=lambda x: x[1])))
 
 
 # 딕셔너리 합치기
 d2 = {"sci": 95, "prog": 100}
-
+# print(d + d2)
 
 # 딕셔너리 반복하기
-
+print(d * 2)
 
 # 멤버십 연산자
+print("kor" in d)
+print("art" in d)
+
+print(90 in d.values())
+print(100 in d.values())
