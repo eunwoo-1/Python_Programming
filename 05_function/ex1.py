@@ -98,6 +98,12 @@ introduce2(**d)
 # - 길 가다가 주운 돈 : 100원, 200원 => 가변인자 (튜플)
 # - 아빠한테 받은 돈 : 10000원
 # - 엄마한테 받은 돈 : 5000원 => 키워드 가변인자 (딕셔너리)
+# 15800원
 
-def pocket_money():
-    pass
+def pocket_money(last_month, *args, **kwargs):
+    tot = last_month
+    tot += sum(args)
+    tot += sum(kwargs.values())
+    return tot
+
+print(pocket_money(500, 100, 200, 300, dad = 10000, mom =5000, uncle = 50000))
