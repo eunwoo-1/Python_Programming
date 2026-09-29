@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 문자열 내장 함수
 
 a = "Hello, Python"
@@ -198,4 +197,3 @@ data = "   kim   lee   park   choi   "
 names = data.split()
 print(names)                    # ✅ 리스트 출력
 print(" ".join(names))          # ✅ "kim lee park choi" 출력
->>>>>>> ff9c8949231826b7ae825ee68301546f483f5e29

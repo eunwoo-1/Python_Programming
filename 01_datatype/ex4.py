@@ -54,7 +54,7 @@ print(f"{num:,}")
 print(f"{num:15,d}")
 print(f"{num:<15,d}")
 print(f"{num:015,d}")
-=======
+======
 # 문자열
 # "", ''
 
@@ -110,4 +110,3 @@ print(f"{num:,}")
 print(f"{num:15,d}")
 print(f"{num:<15,d}")
 print(f"{num:015,d}")
->>>>>>> ff9c8949231826b7ae825ee68301546f483f5e29
